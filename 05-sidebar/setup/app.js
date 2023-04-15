@@ -3,7 +3,7 @@ const closeBtn = document.querySelector('.close-btn');
 const sidebar = document.querySelector('.sidebar');
 
 toggleBtn(addEventListener('click', function(){
-    console.log(sidebar.classLise);
+    console.log(sidebar.classList);
     // if(sidebar.classList.contains('show-sidebar')){
     //     sidebar.classList.remove('show-sidebar');
     // }else{
