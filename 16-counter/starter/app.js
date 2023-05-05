@@ -14,6 +14,20 @@ function Counter(element,value){
     this.decreaseBtn = element.querySelector('.decrease');
     this.valueDOM = element.querySelector('.value');
     this.valueDOM.textContent = this.value;
+
+    // one way to do it
+    // this.increaseBtn.addEventListener('click', this.increase.bind(this));
+    // this.decreaseBtn.addEventListener('click', this.decrease.bind(this));
+    // this.resetBtn.addEventListener('click',this.reset.bind(this));
+
+    //better way:
+    this.increase = this.increase.bind(this);
+    this.decrease = this.decrease.bind(this);
+    this.reset = this.reset.bind(this);
+
+    this.increaseBtn.addEventListener('click', this.increase);
+    this.decreaseBtn.addEventListener('click', this.decrease);
+    this.resetBtn.addEventListener('click', this.reset);
 }
 
 Counter.prototype.increase = function(){
@@ -35,6 +49,7 @@ Counter.prototype.reset = function(){
 const firstCounter = new Counter(getElement('.first-counter'),100);
 const secondCounter = new Counter(getElement('.second-counter'),200);
 
-firstCounter.increase();
-secondCounter.reset();
+// firstCounter.increase();
+// secondCounter.reset();
+
 
